@@ -60,6 +60,10 @@ ml_strategy("small")
 
 
 
+
+
+
+
 # qno 
 def imputation_strategy(column_type):
 
@@ -207,3 +211,151 @@ def e_commerce_cal(delivery_type,order_amount):
 
 
 e_commerce_cal("standered",500000)
+
+
+
+
+
+
+
+
+
+
+# # API Response Handler using match-case
+
+# # Inputs
+# status_code = int(input("Enter status code: "))
+# retry_count = int(input("Enter retry count: "))
+
+# # Match-case for API response handling
+# match status_code:
+#     case 200:
+#         print("Success ✅")
+
+#     case 404:
+#         print("Resource not found ❌")
+
+#     case 500:
+#         if retry_count < 3:
+#             print("Retry request 🔄")
+#         else:
+#             print("Alert admin 🚨")
+
+#     case _:  # Default case for unknown errors
+#         print("Unknown error ❓")
+
+
+
+
+
+
+
+
+    
+
+
+
+
+# # qno 
+# #Data Quality Status: A dataset record has a status value such as 'clean', 'missing', 'duplicate',
+# # or 'invalid'. Use match-case to determine what action should be taken.
+# status = input("Enter data status: ").lower()
+
+# match status:
+
+#     case "clean":
+#         print("✅ Record accepted.")
+
+#     case "missing":
+#         print("⚠ Handle missing values (impute or drop).")
+
+#     case "duplicate":
+#         print("🗑 Remove duplicate record.")
+
+#     case "invalid":
+#         print("🚩 Send record for validation.")
+
+#     case _:
+#         print("Unknown status.")
+
+
+
+
+
+
+
+
+dataset_status = [
+    "clean",
+    "missing",
+    "duplicate",
+    "invalid",
+    "clean"
+]
+
+for status in dataset_status:
+
+    match status:
+
+        case "clean":
+            action = "Keep"
+
+        case "missing":
+            action = "Impute"
+
+        case "duplicate":
+            action = "Remove"
+
+        case "invalid":
+            action = "Review"
+
+        case _:
+            action = "Unknown"
+
+    print(status, "→", action)
+
+
+
+
+
+
+
+
+
+# qno
+algo_name="Linear_regression".lower()
+
+match algo_name:
+    case "linear_regression":
+        print("Strategy: Scale features and fit  linear model.")
+    case "decision_tree":
+        print("Strategy: Build tree using features splits.")
+    case "random_forest":
+        print("Strategy: Train multiple trees and aggregate results.")
+    case _:
+        print("Invalid algorithim name:")
+
+
+
+
+
+
+
+
+# qno 
+file_format="csv"
+
+match file_format:
+    case 'csv':
+        print("Load file using pandas.read_csv()")
+    case 'xlsx':
+        print("Load file using pandas.read_excel()")
+    case 'json':
+        print("Load file using pandas.read_json()")
+    case 'parquet':
+        print("Load file using pandas.read_parquet()")
+    case _:
+        print("Unsupported file format")
+
+
+
