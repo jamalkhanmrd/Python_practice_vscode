@@ -48,3 +48,18 @@ print(lst)
 lst=[i for i in range(10) if i%2==0]
 print(lst)
 
+
+
+
+# list methods
+l=[4,45,7,6,5,43,5]
+l.append(5)
+l.sort()
+l.sort(reverse=True)
+l.reverse()
+l.index(4)
+k=l.count(4)
+l.copy()
+m=l.copy()
+m[0]=0
+print(l)

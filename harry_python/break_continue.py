@@ -292,3 +292,159 @@ for row in dataset:
     if missing_count>threshold:
         print("Missing value threshold exceeded.Stopped imputation!")
         break
+
+
+
+
+
+
+
+# # qno 
+# 10. Experiment Trial Analyzer
+# Scientific experiment trials produce results sequentially. Task: • Skip trials marked 'invalid'. • Record
+# successful trials. • Stop experiment when success rate exceeds 90%.
+
+
+trials = [
+    "failure",
+    "failure",
+    "invalid",
+    "success",
+    "failure",
+    "failure",
+    "invalid",
+    "success",
+    "failure"
+] 
+successful_record=[]
+total_valid=0
+success_count=0
+for trail in trials:
+    if trail=="invalid":
+        continue
+    total_valid+=1
+    if trail=="success":
+        success_count+=1
+        successful_record.append(trail)
+    succes_rate=(success_count/total_valid)*100
+    print("Current success Rate:",succes_rate,"%")
+    if succes_rate>90:
+        print("Experiment stopped: Success Rate Exceeded 90% ")
+        break
+print("\nSuccessful Trials Recorded:",successful_record)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+trials = [
+    "success",
+    "failure",
+    "invalid",
+    "success",
+    "success",
+    "success",
+    "invalid",
+    "failure",
+    "success"
+]
+
+total_valid = 0
+successful_trials = 0
+recorded_success = []
+
+for trial in trials:
+
+    # Skip invalid trials
+    if trial == "invalid":
+        continue
+
+    # Count valid trials
+    total_valid += 1
+
+    # Record successful trials
+    if trial == "success":
+        successful_trials += 1
+        recorded_success.append(trial)
+
+    # Calculate success rate
+    success_rate = (successful_trials / total_valid) * 100
+
+    print("Current Success Rate:", success_rate, "%")
+
+    # Stop experiment if success rate exceeds 90%
+    if success_rate > 90:
+        print("Experiment stopped: Success rate exceeded 90%")
+        break
+
+print("\nSuccessful Trials Recorded:", recorded_success)
+
+
+
+
+
+
+
+
+
+
+# 1. Recommendation System Filter
+# User interaction logs contain bot-generated entries. Task: • Skip bot interactions. • Process only
+# real users. • Stop loop once 1000 valid interactions are processed.
+
+
+
+logs = [
+    {"user": "Ali", "type": "real"},
+    {"user": "Bot_1", "type": "bot"},
+    {"user": "Sara", "type": "real"},
+    {"user": "Bot_2", "type": "bot"},
+    {"user": "Ahmed", "type": "real"}
+]
+
+valid_interactions = 0
+processed_users = []
+
+for log in logs:
+
+    # Skip bot interactions
+    if log["type"] == "bot":
+        continue
+
+    # Process real users
+    valid_interactions += 1
+    processed_users.append(log["user"])
+
+    print("Processed:", log["user"])
+
+    # Stop after 1000 valid interactions
+    if valid_interactions == 1000:
+        print("Reached 1000 valid interactions")
+        break
+
+print("\nTotal Valid Interactions:", valid_interactions)
+print("Users Processed:", processed_users)
+
+
+
+
